@@ -6,6 +6,10 @@
 <%@page import="java.util.Base64"%>
 <%@ page import="java.util.List" %>
 <%@ page import="modelo.Producto" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%
     // 🔐 Verificación de sesión y rol
@@ -165,7 +169,8 @@
                     <tr>
                         <td><%= producto.getIdProducto()%></td>
                         <td><%= producto.getNombre()%></td>
-                        <td>S/ <%= producto.getPrecio()%></td>
+                        <td>S/ <%= String.format(java.util.Locale.US, "%.2f", producto.getPrecio()) %></td>
+
                         <td><%= producto.getDescripcion()%></td>
                         <td>
                             <%

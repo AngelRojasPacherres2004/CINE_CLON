@@ -5,6 +5,9 @@
 --%>
 <%@ page import="modelo.Producto" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<fmt:setLocale value="es_PE"/>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -55,9 +58,10 @@
                 <input type="text" class="form-control" name="nombre" id="nombre" required />
             </div>
             <div class="form-group">
-                <label for="precio">Precio:</label>
-                <input type="text" class="form-control" name="precio" id="precio" required />
+              <label for="precio">Precio:</label>
+              <input type="number" step="0.01" class="form-control" name="precio" id="precio" value="0.00" required />
             </div>
+
             <div class="form-group">
                 <label for="descripcion">Descripción:</label>
                 <textarea class="form-control" name="descripcion" id="descripcion" rows="4" required></textarea>
